@@ -2,8 +2,7 @@ name              in ThisBuild := "cilib-tutorial-book"
 organization      in ThisBuild := "cirg-up"
 version           in ThisBuild := "0.0.1"
 
-scalaOrganization in ThisBuild := "org.typelevel"
-scalaVersion      in ThisBuild := "2.12.1"
+scalaVersion      in ThisBuild := "2.12.4"
 
 logLevel          in Global    := Level.Warn
 
