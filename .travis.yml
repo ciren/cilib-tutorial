@@ -14,12 +14,8 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-before_script:
-  - docker-compose run book bash
-
 script:
-  - npm install
-  - sbt pdf
+  - docker-compose run book bash -c "npm install; sbt pdf"
 
 after_script:
   - docker-compose down
