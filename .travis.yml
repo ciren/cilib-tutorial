@@ -27,3 +27,4 @@ deploy:
   file: dist/cilib-tutorial.pdf
   on:
     repo: cirg-up/cilib-tutorial
+    tags: true
