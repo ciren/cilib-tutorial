@@ -24,6 +24,6 @@ deploy:
   provider: releases
   api_key:
     secure: lY0+as6kQ0NP19fE6nRKFRO9A82fIZD7G9Rik/Y7wDmOFC7TLMvXJFT/a93O1ALbEEdmiCz39/mqvjCnZ7lSd6Z0Ikfm4XaZL99q08E0FTO4MuUwZw7xaEW/D6mFHV8Vs9dUHc7tQmZdk8s51SttF2WVDrvSkJOTQDMal2GERZDj4nG0drX5MddrEVBQW1CzdVd12hdZ83MM+nF7H3eaKpD6fVExrcID58tLRL8oW0ecjwcGceEMmPHfc8Vnq6CIUeFipMleegu0v6LRpF6gk6s3U+WdyaGDNes9mBoF/BQ2EJKU9IOoQ+v2EKXhE4dk92yOFhCbMvmfzQDyJIlbSMX7tJ5BfstXMImyna98R7wq/Boi/wJuUslOahvnPuY6TJoCI9DPzysjwL76DeCBaN1PybjWqF//4plb3wxrEOzs0KrZ9A/bEITdXUPlXYULWTCdPHo61iBCqSFYR2LimQJwiCLLUzLZCbvspen0Og3iME9+w1VcPySIOfZ/3U5es1dyukuo/yd+ElkWeI45MhIXgEOx8IKzDbQWjZKbuPDwzfHMW53OJltEZUu89IGytc8hh053GQdxqJ8jbEze90hj9yEjyhxWDKmbK9lJPgCGP8rGsJs5PJUOa7Eum3V+0HhukBotzPUJXg5a869gapEQy0nJLqpGnVnVxvUnm+U=
-  file: ddd
+  file: dist/test.pdf
   on:
     repo: cirg-up/cilib-tutorial
