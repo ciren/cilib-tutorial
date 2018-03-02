@@ -127,7 +127,7 @@ An example of use would be determining which un-evaluated `RVar[Entity]s` is fit
 
 ```tut:book:silent
 def better[S,A](a: Entity[S,A], b: Entity[S,A]): Step[A,Boolean] =
-    Step.withCompareR(comp => RVar.point(Comparison.fittest(a.pos, b.pos).apply(comp)))
+    Step.withCompareR(comp => RVar.point(Comparison.fitter(a.pos, b.pos).apply(comp)))
 
 val particle1 = Position.createPosition(env.bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(rng)
 val particle2 = Position.createPosition(env.bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(RNG.fromTime)

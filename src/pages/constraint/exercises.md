@@ -7,11 +7,11 @@ Define a `Constraint` to ensure that the head of a list is between 5 and 10.
 ```tut:book:invisible
 import cilib._
 import scalaz._
-import Scalaz._ 
+import Scalaz._
 import spire.implicits._
 ```
 ```tut:book:silent
-import spire.math.Interval 
+import spire.math.Interval
 InInterval(ConstraintFunction((l: NonEmptyList[Double]) => l.head), Interval(5, 10))
 ```
 </div>

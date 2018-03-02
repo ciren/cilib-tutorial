@@ -1,15 +1,13 @@
-name              in ThisBuild := "cilib-tutorial-book"
-organization      in ThisBuild := "cirg-up"
-version           in ThisBuild := "0.0.1"
+val cilibVersion = "2.0.0-RC1"
 
-scalaVersion      in ThisBuild := "2.12.4"
+scalaVersion := "2.12.4"
 
-logLevel          in Global    := Level.Warn
+name := "cilib-tutorial-book"
+organization := "cirg-up"
 
-tutSettings
+enablePlugins(GitVersioning, TutPlugin)
 
-tutSourceDirectory := sourceDirectory.value / "pages"
-tutTargetDirectory := target.value          / "pages"
+git.useGitDescribe := true
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -17,17 +15,26 @@ scalacOptions ++= Seq(
   "-unchecked",
   "-feature",
   "-Xlint",
-  "-Xfatal-warnings",
+//  "-Xfatal-warnings",
   "-Ywarn-dead-code",
-  "-Ypartial-unification",
-  "-Ydelambdafy:inline" // workaround for future deadlock on the 2.12.1 REPL
+  "-Ypartial-unification"
+//  "-Ydelambdafy:inline" // workaround for future deadlock on the 2.12.1 REPL
 )
 
-// resolvers ++= Seq(Resolver.sonatypeRepo("snapshots"))
 
-libraryDependencies ++= Seq("net.cilib" %% "cilib-core" % "2.0.0-RC1")
+scalacOptions in Tut := (scalacOptions in Tut).value.filterNot(Set("-Ywarn-unused-import"))
+
+libraryDependencies ++= Seq(
+  "net.cilib" %% "cilib-core" % cilibVersion,
+  "net.cilib" %% "cilib-ga" % cilibVersion,
+  "net.cilib" %% "cilib-pso" % cilibVersion,
+  "net.cilib" %% "benchmarks" % "0.1.1"
+)
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3")
+
+tutSourceDirectory := sourceDirectory.value / "pages"
+tutTargetDirectory := target.value          / "pages"
 
 lazy val pdf  = taskKey[Unit]("Build the PDF version of the book")
 lazy val html = taskKey[Unit]("Build the HTML version of the book")
@@ -40,4 +47,3 @@ html := { tutQuick.value ; "grunt html" ! }
 epub := { tutQuick.value ; "grunt epub" ! }
 json := { tutQuick.value ; "grunt json" ! }
 all  := { pdf.value ; html.value ; epub.value ; json.value }
-

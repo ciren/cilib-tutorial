@@ -9,7 +9,7 @@ Our `Comparison` object offers us several methods
 dominance(o: Opt): Comparison
 quality(o: Opt) = dominance(o)
 compare[F[_],A](x: F[A], y: F[A])(implicit F: Fitness[F,A]): Comparison => F[A]
-fittest[F[_],A](x: F[A], y: F[A])(implicit F: Fitness[F,A]): Comparison => Boolean
+fitter[F[_],A](x: F[A], y: F[A])(implicit F: Fitness[F,A]): Comparison => Boolean
 ```
 
 Through the use of these methods we will be able to make our programs more elaborate and start getting more optimum results.
@@ -77,11 +77,11 @@ Comparison.compare(test1, test2).apply(comparison)
 ### fittest
 
 Works in a similar fashion to `compare` but returns a function of `Comparison => Boolean`.
-The function determines if the first parameter is fitter than the second. 
+The function determines if the first parameter is fitter than the second.
 
 ```tut:book
-Comparison.fittest(test2, test1).apply(comparison)
-Comparison.fittest(test1, test2).apply(comparison)
+Comparison.fitter(test2, test1).apply(comparison)
+Comparison.fitter(test1, test2).apply(comparison)
 ```
 
 And thats how we use the `Comparison` object!

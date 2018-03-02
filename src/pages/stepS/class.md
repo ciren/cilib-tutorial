@@ -65,14 +65,14 @@ Now, putting it all together to make a `StepS`.
 Pay close attention to the resulting types.
 
 ```tut:book
-val myStepS = StepS.apply((x: Position[Double]) => Step.point[Double, (Position[Double], Double)](explore(x, 0.96)))
+val myStepS = StepS(StateT[Step[Double, ?], Position[Double], Double](x => Step.point(explore(x, 0.96))))
 val step = myStepS.run(position) // Supply an initial value
 val rvar = step.run(env)
 val result = rvar.eval(rng)
 
 // Or alternatively
 
-StepS.apply((x: Position[Double]) => Step.point[Double, (Position[Double], Double)](explore(x, 0.96))).run(position).run(env).eval(rng)
+//StepS.apply((x: Position[Double]) => Step.point[Double, (Position[Double], Double)](explore(x, 0.96))).run(position).run(env).eval(rng)
 ```
 
 Now that we have a `StepS` at our disposal let's start looking at its class methods.
@@ -102,7 +102,7 @@ Similarly, using the `flatMap` method we are able to modify the state as well as
 
 ```tut:book:silent
 def negate (position: Position[Double]): (Position[Double], Double) = (position.map(x => x * -1), -1.0)
-val myStepS2 = StepS.apply((x: Position[Double]) => Step.point[Double, (Position[Double], Double)](negate(x)))
+val myStepS2 = StepS(StateT[Step[Double, ?], Position[Double], Double](x => Step.point(negate(x))))
 ```
 ```tut:book:silent
 myStepS.flatMap(x => myStepS2).run(position).run(env).eval(rng)
