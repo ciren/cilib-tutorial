@@ -8,7 +8,7 @@ date: "Version 1 - January 2018"
 # see src/css/book.css for HTML/ePub covers:
 coverColor: "FF6F00"
 # Used by Grunt to name output files:
-filenameStem: "test"
+filenameStem: "cilib-tutorial"
 # Used by Grunt to create a ZIP of source code:
 exercisesRepo: null # "git@github.com:underscoreio/advanced-scala-code.git"
 tocDepth: 3
