@@ -1,8 +1,8 @@
 ---
 # Used by Pandoc to print covers:
-title: "A Guide To CILib"
+title: "A Community Guide To CILib"
 subtitle: null
-author: "Kyle Erwin"
+author: null
 date: "Version 1 - January 2018"
 # Used by Pandoc to generate the PDF cover...
 # see src/css/book.css for HTML/ePub covers:
@@ -10,7 +10,7 @@ coverColor: "FF6F00"
 # Used by Grunt to name output files:
 filenameStem: "cilib-tutorial"
 # Used by Grunt to create a ZIP of source code:
-exercisesRepo: null # "git@github.com:underscoreio/advanced-scala-code.git"
+exercisesRepo: null
 tocDepth: 3
 copyright: "2017 - 2018"
 # Enable pandoc-crossref (must be installed on user's computer)

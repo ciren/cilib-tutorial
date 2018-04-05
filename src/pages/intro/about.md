@@ -16,7 +16,7 @@ After all this, you will me more than ready to start implementing your work usin
 
 ## What is CILib? #{-}
 
-CILib is software library which aids in the experimentation and research of Computational Intelligence algorithms. The library was created by the CIRG research group of the University of Pretoria. Gary Pamparà, a member of CIRG, created CILib and has helped grow the library ever since. And I would like to thank him and everyone who has contributed towards CILib.
+CILib is software library which aids in the experimentation and research of Computational Intelligence algorithms. The library was created through a combined effort by several researchers. The project originally was called PSOlib as it focused on the PSO algorithm, but over time had additional contributions outside of the PSO area and the project was renamed to CILib.
 
 ### Principled design #{-}
 It is very important to ensure that the library code is pure - thereby reducing complexity. This has many advantages but, most importantly, it allows for the controlling of side-effects which is a primary concern, especially when randomness is involved. As a consequence of this, and other aspects, CILib makes an active effort to address the following:
