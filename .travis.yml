@@ -19,7 +19,7 @@ jobs:
         - sudo mv docker-compose /usr/local/bin
 
       script:
-        - docker-compose run book bash -c "npm install; mkdir -p dist; sbt pdf"
+        - bash ./build.sh
 
       after_script:
         - docker-compose down
