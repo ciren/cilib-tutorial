@@ -1,4 +1,4 @@
-val cilibVersion = "2.0.0-RC1"
+val cilibVersion = "2.0.1"
 
 scalaVersion := "2.12.4"
 
