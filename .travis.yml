@@ -10,6 +10,12 @@ services:
 
 jobs:
   include:
+    - stage: Build Sources
+      if: branch = master
+      language: scala
+      script:
+        - sbt ++$TRAVIS_SCALA_VERSION compile
+
     - stage: GitHub Release
       if: tag IS present
       before_install:
