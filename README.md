@@ -1,5 +1,7 @@
 # Community tutorial for CIlib
 
+[![Build Status](https://travis-ci.org/cirg-up/cilib-tutorial.svg?branch=master)](https://travis-ci.org/cirg-up/cilib-tutorial)
+
 Welcome to the community tutorial source repository!
 
 ## About the tutorial
