@@ -77,28 +77,9 @@ def explore (position: Position[Double]): Position[Double] = position.map(x => x
 
 Step.eval(explore)(particle)
 ```
+
 ```tut:book:silent
 Step.eval(explore)(particle).run(env).run(rng)
-
-/*
-particle = Entity(
-    Mem(
-        Point(NonEmpty[3.1645541615758654,-1.8652719649133465],NonEmpty[[-5.12, 5.12],[-5.12, 5.12]]),
-        Point(NonEmpty[0.0,0.0],NonEmpty[[-5.12, 5.12],[-5.12, 5.12]]))
-    ,Point(
-        NonEmpty[3.1645541615758654,-1.8652719649133465],
-        NonEmpty[[-5.12, 5.12],[-5.12, 5.12]]))
-
-Step.eval(explore)(particle).run(env).run(rng) = Entity(
-    Mem(
-        Point(NonEmpty[3.1645541615758654,-1.8652719649133465],NonEmpty[[-5.12, 5.12],[-5.12, 5.12]]),
-        Point(NonEmpty[0.0,0.0],NonEmpty[[-5.12, 5.12],[-5.12, 5.12]]))
-    ,Solution(
-        NonEmpty[2.3101245379503816,-1.3616485343867428],
-        NonEmpty[[-5.12, 5.12],[-5.12, 5.12]],
-        Single(Feasible(7.19076211203803),List()))
-    )
-*/
 ```
 
 As you can see from the above code, when our `Entity` was evaluated
@@ -122,6 +103,7 @@ def updatePBest[S](p: Entity[S,Double])(implicit M: HasMemory[S,Double]): Step[D
         Entity(p.state applyLens pbestL set x, p.pos))
 }
 ```
+
 ```tut:book
 updatePBest(particle).run(env).eval(rng)
 ```
@@ -138,6 +120,7 @@ def better[S,A](a: Entity[S,A], b: Entity[S,A]): Step[A,Boolean] =
 val particle1 = Position.createPosition(bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(rng)
 val particle2 = Position.createPosition(bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(RNG.fromTime)
 ```
+
 ```tut:book
 better(particle1, particle2).run(env).eval(rng)
 ```

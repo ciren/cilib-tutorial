@@ -45,9 +45,10 @@ import spire.implicits._
 import spire.algebra.Eq
 
 val sumLessThanCons = LessThan(sumCF, 12.0)
-val firstNumberCons = cilib.Equal(ConstraintFunction((l: NonEmptyList[Double]) => l.head), 4.0) 
 // A constraint that ensures the first element of a list is 4
+val firstNumberCons = cilib.Equal(ConstraintFunction((l: NonEmptyList[Double]) => l.head), 4.0) 
 ```
+
 ```tut:book
 Constraint.violationCount(List(sumLessThanCons, firstNumberCons), NonEmptyList(19.0, 37.23, 12.0))
 Constraint.violationCount(List(sumLessThanCons, firstNumberCons), NonEmptyList(4.0, 3.0, 2.0))

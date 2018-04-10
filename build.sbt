@@ -42,8 +42,10 @@ lazy val epub = taskKey[Unit]("Build the ePub version of the book")
 lazy val json = taskKey[Unit]("Build the Pandoc JSON AST of the book")
 lazy val all  = taskKey[Unit]("Build all versions of the book")
 
-pdf  := { tutQuick.value ; "grunt pdf"  ! }
-html := { tutQuick.value ; "grunt html" ! }
-epub := { tutQuick.value ; "grunt epub" ! }
-json := { tutQuick.value ; "grunt json" ! }
+import scala.sys.process._
+
+pdf  := { tutQuick.value ; Seq("grunt", "pdf").! }
+html := { tutQuick.value ; Seq("grunt", "html").! }
+epub := { tutQuick.value ; Seq("grunt", "epub").! }
+json := { tutQuick.value ; Seq("grunt", "json").! }
 all  := { pdf.value ; html.value ; epub.value ; json.value }

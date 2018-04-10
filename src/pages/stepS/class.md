@@ -72,10 +72,6 @@ val myStepS = StepS(StateT[Step[Double, ?], Position[Double], Double](x => Step.
 val step = myStepS.run(position) // Supply an initial value
 val rvar = step.run(env)
 val result = rvar.eval(rng)
-
-// Or alternatively
-
-//StepS.apply((x: Position[Double]) => Step.point[Double, (Position[Double], Double)](explore(x, 0.96))).run(position).run(env).eval(rng)
 ```
 
 Now that we have a `StepS` at our disposal let's start looking at its
