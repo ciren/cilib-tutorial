@@ -29,14 +29,12 @@ It should now look something similar to this
 name := "CILib-Demo"
 version := "0.1"
 scalaVersion := "2.12.4"
-resolvers ++= Seq(Resolver.sonatypeRepo("snapshots"))
-libraryDependencies ++= Seq("net.cilib" %% "cilib-core" % "2.0.0-SNAPSHOT")
+libraryDependencies ++= Seq("net.cilib" %% "cilib-core" % "2.0.1")
 ```
 
 For those of you using InteliJ it should provide you with the option to refresh the project otherwise you can do it yourself by hovering over the dependency and clicking the light bulb. If you are using the terminal exit the project and renter it with `sbt console`.
 
-Congratulations! You now have the `core` of CILib in your project. 
-The reason we are using `SNAPSHOT` is because that is the exact same dependency I am using to create this book. If you want know more about `resolvers` click [here][link-resolvers]
+Congratulations! You now have the `core` of CILib in your project.
 In general, however, you can just use the following 
 
 ```scala

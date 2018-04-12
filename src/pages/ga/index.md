@@ -9,7 +9,7 @@ For a clear and thorough walk through of the everything GA refer to the "Runner 
 
 To include this library in your project you can add the following to your list of library dependencies
 
-`"net.cilib" %% "cilib-ga" % "2.0.0-SNAPSHOT"`
+`"net.cilib" %% "cilib-ga" % "2.0.1"`
 
 ## Individual
 
