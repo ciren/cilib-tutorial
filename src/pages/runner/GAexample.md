@@ -272,9 +272,3 @@ What you choose to do with this list is up to you. For example, extracting the f
 Alternatively, you can also use this line of code to print the resulys as a `String`.
 
 `println(Runner.repeat(1000, iterator, swarm).run(env).eval(RNG.init(12L)).toString)`
-
-
-### Dynamic Enviroment
-
-
-
