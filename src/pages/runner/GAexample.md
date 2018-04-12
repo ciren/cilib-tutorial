@@ -265,7 +265,10 @@ comparison.
 
 Lastly, running our program requires a `Runner`.
 
-`println(Runner.repeat(1000, iterator, swarm).run(env).eval(RNG.init(12L)).toString)`
+`Runner.repeat(1000, iterator, swarm).run(env).eval(RNG.init(12L))`
 
-This line of code will produce the results of our ga after 1000
-iterations as a string.
+This line of code will produce `NonEmptyList` of `Entities` after the the GA has performed 1000 itterations.
+What you choose to do with this list is up to you. For example, extracting the fitsness value of each `Entity`.
+Alternatively, you can also use this line of code to print the resulys as a `String`.
+
+`println(Runner.repeat(1000, iterator, swarm).run(env).eval(RNG.init(12L)).toString)`

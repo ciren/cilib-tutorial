@@ -4,6 +4,8 @@ The companion object offers several methods that we may use to create
 instances of `Steps`.
 
 ```scala
+pure[A,B](b: B): Step[A,B]
+
 point[A,B](b: B): Step[A,B]
 
 pointR[A,B](a: RVar[B]): Step[A,B]
@@ -33,7 +35,10 @@ val env = Environment(
 
 ### point
 
-Returns an instance of `Step` based on the given parameter.
+Returns an instance of `Step` based on the given parameter. As within Haskell,
+pure is the preferred usage. It also makes a little more sense as the provided
+value is placed into the monad context such that the same value will be
+extracted later.
 
 ```tut:book:invisible
 import cilib._
@@ -48,6 +53,17 @@ val env = Environment(
     eval =  Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
 )
 ```
+```tut:book:silent
+val particle = Position.createPosition(bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(rng)
+```
+```tut:book
+Step.point(particle)
+```
+
+### point
+
+`point` performs `pure`. This method will soon be deprecated.
+
 ```tut:book:silent
 val particle = Position.createPosition(bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(rng)
 ```

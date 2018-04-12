@@ -8,6 +8,8 @@ The `RVar` Object has a several methods that allows to create instances of `RVar
 ```scala
 apply[A](f: RNG => (RNG, A)): RVar[A]
 
+pure[A](a: => A): RVar[A]
+
 point[A](a: => A): RVar[A]
 
 next[A](implicit e: Generator[A]): RVar[A]
@@ -25,7 +27,8 @@ sample[A](n: Int, xs: NonEmptyList[A]): OptionT[RVar, List[A]]
 shuffle[A](xs: NonEmptyList[A]): RVar[NonEmptyList[A]]
 ```
 
-We will be testing all these methods using `eval` with a `RNG` on the instances of `RVar` that they create.
+We will be testing all these methods using `eval` with a `RNG` on the
+instances of `RVar` that they create.
 
 ### apply
 
@@ -39,9 +42,20 @@ val rng = RNG.fromTime
 RVar(rng => (rng, 2)).eval(rng)
 ```
 
+### pure
+
+`point` performs `apply`. The bennifit is that we need not to worry about
+supplying a `RNG`. As within Haskell, pure is the preferred usage. It also
+makes a little more sense as the provided value is placed into the monad
+context such that the same value will be extracted later.
+
+```tut:book
+RVar.point(4).eval(rng)
+```
+
 ### point
 
-`point` performs `apply`. The bennifit is that we need not to worry about supplying a `RNG`.
+`point` performs `pure`. This method will soon be deprecated.
 
 ```tut:book
 RVar.point(4).eval(rng)
@@ -49,8 +63,9 @@ RVar.point(4).eval(rng)
 
 ### next
 
-This is a really cool method as it allows us to access the next number from the PRNG stream.
-Furthermore, the monad instance for RVar allows for cleaner syntax through the use of a for-comprehension.
+This is a really cool method as it allows us to access the next number from
+the PRNG stream. Furthermore, the monad instance for RVar allows for cleaner
+syntax through the use of a for-comprehension.
 
 ```tut:book
 val composition = for {
@@ -84,9 +99,8 @@ RVar.choices(4, NonEmptyList(4, 3, 2, 56, 78)).run.eval(rng)
 RVar.sample(4, NonEmptyList(4, 3, 2, 56, 78)).run.eval(rng)
 ```
 
-It makes use of an `OptionT`. 
-An example of use with these functions would be selecting entities for a crossover method,
-perhaps in a GA or DE.
+It makes use of an `OptionT`. An example of use with these functions would be
+selecting entities for a crossover method, perhaps in a GA or DE.
 
 ### shuffle
 
