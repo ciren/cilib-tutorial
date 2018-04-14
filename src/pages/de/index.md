@@ -7,7 +7,7 @@ We'll start off with the standard de algorithm and branch off from there with di
 
 To include this library in your project you can add the following to your list of library dependencies
 
-`"net.cilib" %% "cilib-de" % "2.0.0-SNAPSHOT"`
+`"net.cilib" %% "cilib-de" % "@CILIB_VERSION@"`
 
 ## DE Method
 

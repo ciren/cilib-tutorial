@@ -1,3 +1,5 @@
+enablePlugins(PreprocessPlugin)
+
 val cilibVersion = "2.0.1"
 
 scalaVersion := "2.12.4"
@@ -69,8 +71,24 @@ libraryDependencies ++= Seq(
 
 addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.3")
 
-tutSourceDirectory := sourceDirectory.value / "pages"
-tutTargetDirectory := target.value          / "pages"
+tutSourceDirectory := target.value / "preprocessed"
+tutTargetDirectory := target.value / "pages"
+
+sourceDirectory in Preprocess := sourceDirectory.value / "pages"
+target in Preprocess := target.value / "preprocessed"
+
+preprocessVars in Preprocess := Map(
+  "CILIB_VERSION" -> cilibVersion
+//  "DATE" -> new Date().toString
+)
+
+
+lazy val build = taskKey[Unit]("Compile the sources of the book")
+
+build := {
+  (preprocess in Preprocess).value
+  tutQuick.value
+}
 
 lazy val pdf  = taskKey[Unit]("Build the PDF version of the book")
 lazy val html = taskKey[Unit]("Build the HTML version of the book")
@@ -80,8 +98,8 @@ lazy val all  = taskKey[Unit]("Build all versions of the book")
 
 import scala.sys.process._
 
-pdf  := { tutQuick.value ; Seq("grunt", "pdf").! }
-html := { tutQuick.value ; Seq("grunt", "html").! }
-epub := { tutQuick.value ; Seq("grunt", "epub").! }
-json := { tutQuick.value ; Seq("grunt", "json").! }
+pdf  := { build.value ; Seq("grunt", "pdf").! }
+html := { build.value ; Seq("grunt", "html").! }
+epub := { build.value ; Seq("grunt", "epub").! }
+json := { build.value ; Seq("grunt", "json").! }
 all  := { pdf.value ; html.value ; epub.value ; json.value }

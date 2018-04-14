@@ -17,9 +17,9 @@ Your library dependencies should look very similar to the following...
 
 ```
 libraryDependencies ++= Seq(
-    "net.cilib" %% "cilib-core" % "2.0.0-SNAPSHOT",
-    "net.cilib" %% "cilib-ga" % "2.0.0-SNAPSHOT",
-    "net.cilib" %% "cilib-exec" % "2.0.0-SNAPSHOT"
+    "net.cilib" %% "cilib-core" % "@CILIB_VERSION@",
+    "net.cilib" %% "cilib-ga" % "@CILIB_VERSION@",
+    "net.cilib" %% "cilib-exec" % "@CILIB_VERSION@"
 )
 ```
 

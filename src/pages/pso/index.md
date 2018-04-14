@@ -5,6 +5,6 @@ While offering numerous pso components and algorithms it's best to begin with th
 
 To include this library in your project you can add the following to your list of library dependencies
 
-`"net.cilib" %% "cilib-pso" % "2.0.0-SNAPSHOT"`
+`"net.cilib" %% "cilib-pso" % "@CILIB_VERSION@"`
 
 There are also several examples of implementations of PSOs in the example package. You can view the example package [here][example-package].
