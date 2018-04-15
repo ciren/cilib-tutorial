@@ -44,7 +44,7 @@ RVar(rng => (rng, 2)).eval(rng)
 
 ### pure
 
-`point` performs `apply`. The bennifit is that we need not to worry about
+`point` performs `apply`. The benefit is that we need not to worry about
 supplying a `RNG`. As within Haskell, pure is the preferred usage. It also
 makes a little more sense as the provided value is placed into the monad
 context such that the same value will be extracted later.
