@@ -15,7 +15,7 @@ To include this library in your project you can add the following to your list o
 
 `Individual` is a type of `Entity`.
 While `Entity` has the type parameters `[S, A]`, `Individual` plugs in `Double` to `A`.
-Thus giving us the definition: 
+Thus giving us the definition:
 
 `type Individual[S] = Entity[S, Double]`
 
