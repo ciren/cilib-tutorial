@@ -29,7 +29,8 @@ It should now look something similar to this
 name := "CILib-Demo"
 version := "0.1"
 scalaVersion := "2.12.4"
-libraryDependencies ++= Seq(`"net.cilib" %% "cilib-core" % "@CILIB_VERSION@"`)
+resolvers ++= Seq(Resolver.sonatypeRepo("snapshots"))
+libraryDependencies ++= Seq("net.cilib" %% "cilib-core" % "@CILIB_VERSION@")
 ```
 
 For those of you using InteliJ it should provide you with the option to refresh the project otherwise you can do it yourself by hovering over the dependency and clicking the light bulb. If you are using the terminal exit the project and renter it with `sbt console`.
