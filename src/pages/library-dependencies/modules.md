@@ -29,7 +29,6 @@ It should now look something similar to this
 name := "CILib-Demo"
 version := "0.1"
 scalaVersion := "2.12.4"
-resolvers ++= Seq(Resolver.sonatypeRepo("snapshots"))
 libraryDependencies ++= Seq("net.cilib" %% "cilib-core" % "@CILIB_VERSION@")
 ```
 
