@@ -76,7 +76,7 @@ This lense will not work for `Doubles`.
 
 Will provide a `Prism`.
 If the `Position` is a `Solution` is will be returned in `Some`.
-Else its a `Point` and `None` will be returned.
+Else it's a `Point` and `None` will be returned.
 
 ```tut:book:silent
 val rng = RNG.init(12)
@@ -107,7 +107,7 @@ val objective = Lenses._objectiveLens.get(solution)
 
 Provides a `Prism`.
 If the `Object` is a `Single` is will be returned in `Some`.
-Else its a `Multi` and `None` will be returned.
+Else it's a `Multi` and `None` will be returned.
 
 ```tut:book:silent
 val rng = RNG.init(12)
@@ -146,8 +146,8 @@ val fit = Lenses._singleFit.get(single)
 ### _singleFitness
 
 Will provide a `Prism`.
-If the `Position` is a `Solution` it's fitness (`Fit`) will be returned in `Some`.
-Else its a `Point` and `None` will be returned.
+If the `Position` is a `Solution` its fitness (`Fit`) will be returned in `Some`.
+Else it's a `Point` and `None` will be returned.
 
 ```tut:book:silent
 val rng = RNG.init(12)
@@ -162,8 +162,8 @@ Lenses._singleFitness.getOption(pos)
 ### _feasible
 
 Will provide a `Prism`.
-If the `Fit` is a `Feasible` it's fitness will be returned in `Some`.
-Else its a `Infeasible` and `None` will be returned.
+If the `Fit` is a `Feasible` its fitness will be returned in `Some`.
+Else it's a `Infeasible` and `None` will be returned.
 
 ```tut:book:silent
 val rng = RNG.init(12)

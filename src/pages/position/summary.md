@@ -11,7 +11,7 @@ import Scalaz._
 
 import eu.timepit.refined.auto._
 
-import spire.implicits.{eu =>  _, _}
+import spire.implicits.{eu => _, _}
 import spire.math.Interval
 ```
 ```tut:book:silent

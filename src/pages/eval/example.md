@@ -44,7 +44,7 @@ def getSolution (fit: Fit) : Double = {
     fit match {
         case Feasible(v) => v
         case Infeasible(_, _) => -1.0
-        case Adjusted (_, _) => -1.0        
+        case Adjusted (_, _) => -1.0
     }
 }
 

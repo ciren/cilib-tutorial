@@ -27,7 +27,7 @@ val rng = RNG.init(12)
 val bounds = Interval(-5.12,5.12)^2
 val env = Environment(
     cmp = Comparison.dominance(Min),
-    eval =  Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
+    eval = Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
 )
 ```
 
@@ -45,7 +45,7 @@ val rng = RNG.init(12)
 val bounds = Interval(-5.12,5.12)^2
 val env = Environment(
     cmp = Comparison.dominance(Min),
-    eval =  Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
+    eval = Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
 )
 ```
 ```tut:book:silent
@@ -68,7 +68,7 @@ Step.pointR(particle).run(env).eval(rng)
 
 ### eval
 
-`eval` is used for evaluating `Entities`.  This function produces a
+`eval` is used for evaluating `Entities`. This function produces a
 `Step` which may be `run` using a function, `Environment => RVar[A]`.
 
 ```tut:book
@@ -83,13 +83,13 @@ Step.eval(explore)(particle).run(env).run(rng)
 ```
 
 As you can see from the above code, when our `Entity` was evaluated
-it's `Point` changed to a `Solution`.  However it's `state` remained
+it's `Point` changed to a `Solution`. However its `state` remained
 the same as that is up to us as to how we update it.
 
 ### withCompare
 
 An example of use would be comparing the current position of an
-`Entity` with it's best, and then returning a new `Entity` based on
+`Entity` with its best, and then returning a new `Entity` based on
 the comparison.
 
 ```tut:book:silent
@@ -128,5 +128,5 @@ better(particle1, particle2).run(env).eval(rng)
 ### evalF
 
 `evalF` will take a `Position` an returns a `Step` that represents the
-evaluation of the position.  This is actually used in the `Step.eval`
+evaluation of the position. This is actually used in the `Step.eval`
 method.

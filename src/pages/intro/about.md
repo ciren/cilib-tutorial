@@ -12,7 +12,7 @@ During this book we will be covering four major sections:
 - Working through some examples
 
 As we cover each section you will begin to learn how components work and where to use them.
-After all this, you will me more than ready to start implementing your work using CILib.
+After all this, you will be more than ready to start implementing your work using CILib.
 
 ## What is CILib? #{-}
 
@@ -23,7 +23,7 @@ It is very important to ensure that the library code is pure - thereby reducing 
 
 - **Correctness**: All algorithmic components should be correct and operate as intended, doing nothing more. Peer-review is hugely valuable in this regard, providing the confidence that the implementations are correct and sound.
 - **Type safety**: The use of types is a fantastic way to ensure that a program cannot represent invalid states. This removes a huge set of potential errors and ensures greater confidence, as the compiler is always double-checking the code.
-- **Reproducibility**: Within scientific research, being able to reproduce the work of another researcher is important. It's also a fundamental part of the scientific method. When complexities such as randomness, this becomes much more  difficult and is generally extremely cumbersome. CILib must allow for the perfect replication of experimental work.
+- **Reproducibility**: Within scientific research, being able to reproduce the work of another researcher is important. It's also a fundamental part of the scientific method. With complexities such as randomness, this becomes much more difficult and is generally extremely cumbersome. CILib must allow for the perfect replication of experimental work.
 
  With all this in mind, we can think of CILib as a platform that allows us to build a project by combining a number of components that are reinforced by type safety to ensure correctness and can be easily reproduced.
 

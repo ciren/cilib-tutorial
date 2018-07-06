@@ -1,9 +1,9 @@
 # Benchmarks
 
 Often in computational intelligence we will need to test algorithms on
-standard problems.  It should be noted that CIRG contains a library of
-benchmarks that we can use with CILib.  The benchmarks can be found
-[here][benchmarks] as well as a list of available benchmarks.  To
+standard problems. It should be noted that CIRG contains a library of
+benchmarks that we can use with CILib. The benchmarks can be found
+[here][benchmarks] as well as a list of available benchmarks. To
 import benchmarks into your build you need the following dependency
 added to your sbt.build.
 
@@ -27,6 +27,6 @@ val env =
         eval = Eval.unconstrained(Benchmarks.spherical[NonEmptyList, Double]).eval)
 ```
 
-That's all there is to it!  Be sure to check out the list of
+That's all there is to it! Be sure to check out the list of
 benchmarks that are included and can be accessed by the `Benchmark`
 object.

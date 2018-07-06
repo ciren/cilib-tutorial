@@ -1,6 +1,6 @@
 ## Step Class
 
-`Step` is has a very simple class definition.  It takes a single
+`Step` is has a very simple class definition. It takes a single
 parameter, that being a function of type `Environment[A] => RVar[B]`.
 We see this member function used we we call `run` of a `Step`.
 
@@ -8,7 +8,7 @@ We see this member function used we we call `run` of a `Step`.
 final case class Step[A,B] private (run: Environment[A] => RVar[B])
 ```
 
-Not complicated at all.  And because of it's monadic nature we have
+Not complicated at all. And because of its monadic nature we have
 the following functions at our disposal.
 
 ```scala
@@ -56,9 +56,9 @@ In this example we changed it from
 
 ### flatMap
 
-Here we changing the context.  In this example, We are passing an
+Here we changing the context. In this example, We are passing an
 `Entity[A] => Step[A, C]`, thus producing a new `Step[A, C]` which
-will differ from our original `Step[A, B]`.  What will happen here is
+will differ from our original `Step[A, B]`. What will happen here is
 that we adding an extra *step*.
 
 
@@ -75,10 +75,10 @@ myStep.flatMap(entity => Step.eval(negate)(particle)).run(env).eval(rng)
 ```
 
 So now our `Step` represents a step in an algorithm where a position
-is multiplied by 0.73 and then negated.  This step might not serve any
+is multiplied by 0.73 and then negated. This step might not serve any
 real world purpose but it demonstrates how we may chain `Steps`
-together to form an algorithm.  This is easily achieved by using for
-comprehensions.  For example, take a look at the following method.
+together to form an algorithm. This is easily achieved by using for
+comprehensions. For example, take a look at the following method.
 
 ```tut:book
 def algorithm(entity: Entity[Mem[Double], Double]) = (for {

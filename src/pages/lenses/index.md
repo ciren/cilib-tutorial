@@ -25,7 +25,7 @@ is obviously only possible if the provided types correctly line up.
 Building on the usage of optics in general, we use a mechanism known as
 "classy lens" in Haskell. This mechanism prevents invalid usage, by letting
 the compiler fail based on the types being used. In the case of ``Entity``,
-the compiler would look up instances, using it's implicit resolution rules,
+the compiler would look up instances, using its implicit resolution rules,
 to obtain evidence for a typeclass with a given set of types, at compile time.
 
 This provides an additional level of surety, that the data being passed to

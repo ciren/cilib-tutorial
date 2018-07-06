@@ -25,7 +25,7 @@ import spire.math.Interval
 ### The Problem Environment
 
 For our problem we are going to attempt to find the greatest area
-produced by a 2 dimensional rectangle.  The sides can range from 0.1
+produced by a 2 dimensional rectangle. The sides can range from 0.1
 to 12.
 
 ```tut:book
@@ -72,26 +72,26 @@ crossover //is the function that we will use to produce off spring
 mutation //is the function we will use to mutate the offspring
 ```
 
-All right. Not too bad.  By being able to pass functions to a generic
-GA method allows us to build a GA specific to our needs.  It should
+All right. Not too bad. By being able to pass functions to a generic
+GA method allows us to build a GA specific to our needs. It should
 also be noted that all the passable functions yield the same data
-type.  Now before we move to the actual implementation of the `ga`
+type. Now before we move to the actual implementation of the `ga`
 method, I would like to remind you that for comprehensions are
-essentially chained `flatMaps`.  This allows us to chain steps
-together.  So we know that this method will return a function of type
+essentially chained `flatMaps`. This allows us to chain steps
+together. So we know that this method will return a function of type
 
 `NonEmptyList[Individual[S]] => Individual[S] => Step[Double,List[Individual[S]]]`
 
 Which in simply means, that we are going to get a function that return
 a `Step` representing a series of computations applied to every
-`Individual` with a collection of `Individuals`.  Okay, so now we know
+`Individual` with a collection of `Individuals`. Okay, so now we know
 what we are returning but let's see how we get to that by looking at
 the "series of computations".
 
 `parents <- Step.pointR(parentSelection(collection))`
 
 Here we are selecting our parents from the collection using the
-parentSelection function that was passed as a parameter.  Lastly, it
+parentSelection function that was passed as a parameter. Lastly, it
 will be wrapped in a `Step`.
 
 `r <- Step.pointR(Dist.stdUniform.map(_ < p_c))`
@@ -106,19 +106,19 @@ crossed <-
 
 If r is `true` we will produce crossovers based on the `parents` using
 the crossover function parameter, else we are going to just leave the
-parents as is.  How frequently the crossover occurs depends on your
+parents as is. How frequently the crossover occurs depends on your
 `p_c`.
 
 `mutated <- Step.pointR[Double,List[Individual[S]]](mutation(crossed))`
 
 Nothing too complex here. We are simply mutating our ``crossed``
-individuals using the mutation function parameter.  Also note that
+individuals using the mutation function parameter. Also note that
 ``mutated`` will have a data type very similar tto our return type.
 
 `evaluated <- mutated.traverseU(x => Step.eval((v: Position[Double]) => v)(x))`
 
 Lastly, we are taking every `Individual` from `mutated` and wrapping
-each one in an evaluation `Step`.  Remember that this is just a step
+each one in an evaluation `Step`. Remember that this is just a step
 representing evaluation, not actually evaluating the `Individuals`
 right now.
 
@@ -127,11 +127,11 @@ Let's get to creating the functions we will be passing to our ga method.
 ### Selection Method
 
 For our selection method we will be creating a random selection
-method.  We know that it needs to have the type
-`NonEmptyList[Individual[S]] => RVar[List[Individual[S]]]`.  To make
+method. We know that it needs to have the type
+`NonEmptyList[Individual[S]] => RVar[List[Individual[S]]]`. To make
 this even easier to read we can include a custom type, `type Ind =
 Individual[Unit]`, making it `NonEmptyList[Ind] =>
-RVar[List[Individual[S]]]`.  Create a function with the name
+RVar[List[Individual[S]]]`. Create a function with the name
 `randomSelection` that will randomly select two `Inds` from an non
 empty list.
 
@@ -149,11 +149,11 @@ val randomSelection: NonEmptyList[Ind] => RVar[List[Ind]] =
 ### Selection Method
 
 For our selection method we will be creating a random selection
-method.  We know that it needs to have the type
-`NonEmptyList[Individual[S]] => RVar[List[Individual[S]]]`.  To make
+method. We know that it needs to have the type
+`NonEmptyList[Individual[S]] => RVar[List[Individual[S]]]`. To make
 this even easier to read we can include a custom type, `type Ind =
 Individual[Unit]`, making it `NonEmptyList[Ind] =>
-RVar[List[Individual[S]]]`.  Create a function with the name
+RVar[List[Individual[S]]]`. Create a function with the name
 `randomSelection` that will randomly select two `Inds` from an non
 empty list.
 
@@ -172,9 +172,9 @@ val randomSelection: NonEmptyList[Ind] => RVar[List[Ind]] =
 
 We will be creating a one point crossover method to be used in our GA.
 It will need to have the type `List[Individual[S]] =>
-RVar[List[Individual[S]]]` and let's call it `onePoint`.  There should
+RVar[List[Individual[S]]]` and let's call it `onePoint`. There should
 be two `Individuals`, parents, in the list that will be used to create
-two new `Individuals` from a one point cross over.  Else we should
+two new `Individuals` from a one point cross over. Else we should
 output an error.
 
 <div class="solution">
@@ -194,15 +194,15 @@ def onePoint(xs: List[Ind]): RVar[List[Ind]] =
 
 ### Mutation Method
 
-Our mutation method will be relatively simply.  For every `Individual`
-we want to mutate it's position where each point in the position is
-mutated based on a `Boolean`.  If It is true, mutate the point by
-multiplying by a random number from a gaussian distribution.  Else
-leave it as it is.  This deciding `Boolean` is determined the same way
-r is in our `ga` method.  Except, that is compared with a double
-parameter, `p_m`, representing the mutation rate.  So you might need
-groups of parameters.  Call this method `mutation` and be aware of
-it's return type.  Also some helpful hints are to think about using
+Our mutation method will be relatively simply. For every `Individual`
+we want to mutate its position where each point in the position is
+mutated based on a `Boolean`. If It is true, mutate the point by
+multiplying by a random number from a gaussian distribution. Else
+leave it as it is. This deciding `Boolean` is determined the same way
+r is in our `ga` method. Except, that is compared with a double
+parameter, `p_m`, representing the mutation rate. So you might need
+groups of parameters. Call this method `mutation` and be aware of
+it's return type. Also some helpful hints are to think about using
 `Lenses` and the `ModifyF` function, as well as `traverse` for
 sequencing through points ot a list.
 
@@ -243,9 +243,9 @@ val swarm = Position.createCollection[Ind](x => Entity((), x))(bounds, 20)
 
 ### Creating an Iterator
 
-Here is where things get a little more interesting.  Remember the
-`Iteration` section earlier in this chapter?  Here is where we dive
-into that.  I'll first present the code and then we can go over it.
+Here is where things get a little more interesting. Remember the
+`Iteration` section earlier in this chapter? Here is where we dive
+into that. I'll first present the code and then we can go over it.
 
 ```scala
 val iterator =
@@ -258,7 +258,7 @@ val iterator =
 This code creates a synchronous iterator based on our ga that at each
 generation select the best 20 based on our comparison dominance.
 `Iteration.sync(myGA).map(_.suml)` allows us to work with a
-`List[Ind]`.  `r` is an `Ind` which becomes a `Step` with a
+`List[Ind]`. `r` is an `Ind` which becomes a `Step` with a
 comparison.
 
 ### Running our GA

@@ -50,9 +50,9 @@ First StepS" where you can find a thorough example.
 
 ### pointR
 
-Creating a `StepS` based on an `RVar` computation.  It is important to
+Creating a `StepS` based on an `RVar` computation. It is important to
 remember that the initial value for `run` is a state value, the second
-type parameter.  In this case `Double`.
+type parameter. In this case `Double`.
 
 ```tut:book:invisible
 val bounds = Interval(-5.12,5.12)^2

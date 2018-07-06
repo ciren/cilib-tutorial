@@ -3,7 +3,7 @@
 We now know how to use instances of `RVar` but now we are going to focus on creating them. 
 This is the purpose of the companion object. 
 
-The `RVar` Object has a several methods that allows to create instances of `RVar` (the class).
+The `RVar` Companion Object has several methods that allow us to create instances of `RVar` (the class).
 
 ```scala
 apply[A](f: RNG => (RNG, A)): RVar[A]
@@ -41,7 +41,7 @@ RVar(rng => (rng, 2)).eval(rng)
 
 ### point
 
-`point` performs `apply`. The bennifit is that we need not to worry about supplying a `RNG`.
+`point` performs `apply`. The benefit is that we need not worry about supplying a `RNG`.
 
 ```tut:book
 RVar.point(4).eval(rng)
