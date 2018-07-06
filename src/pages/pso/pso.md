@@ -1,7 +1,7 @@
 ## PSO Methods
 
 The `PSO` object supports all the necessary methods required to build a pso in CILib.
-The majority of these methods will return a `Step` for the purpose chaining them together.
+The majority of these methods will return a `Step` for the purpose of chaining them together.
 For example 
 
 ```scala
@@ -16,7 +16,7 @@ collection => x => for {
     } yield updated
 ```
 
-While some other methods exist as helper methods.
+This is in contrast to some other methods which exist as helper methods.
 
 ### stdPosition
 
@@ -77,7 +77,7 @@ singleComponentVelocity[S](
 
 ### gcVelocity
 
-The `gcVelocity` method has unique parameter that is of type `GCParams`.
+The `gcVelocity` method has a unique parameter that is of type `GCParams`.
 
 ```scala
 gcVelocity[S](
@@ -94,7 +94,7 @@ gcVelocity[S](
 final case class GCParams(p: Double, successes: Int, failures: Int, e_s: Double, e_f: Double)
 ```
 
-We are also provide with a `defaultGCParams` that will return a `GCParams` with default values.
+We are also provided with a `defaultGCParams` that will return a `GCParams` with default values.
 
 ```scala
 defaultGCParams = GCParams(p = 1.0, successes = 0, failures = 0, e_s = 15, e_f = 5)

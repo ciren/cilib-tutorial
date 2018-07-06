@@ -1,13 +1,13 @@
 # Step
 
-What is this mysterious data type called `Step`?  Well, it actually
-represents a *step* in an algorithm.  Nothing mysterious at all. How
-does this happen?  `Step` is a monad transformer and because monad
+What is this mysterious data type called `Step`? Well, it actually
+represents a *step* in an algorithm. Nothing mysterious at all. How
+does this happen? `Step` is a monad transformer and because monad
 transformers are monads themselves, we can freely compose different
 Step instances to create a larger computation.
 
 In the last chapter we learnt how to create `Entities`, but what about
-evaluating them?  This wil be our first introduction to `Step`.
+evaluating them? This wil be our first introduction to `Step`.
 
 ```tut:book:invisible
 import cilib._
@@ -22,7 +22,7 @@ val bounds = Interval(-5.12,5.12)^2
 
 val env = Environment(
         cmp = Comparison.dominance(Min),
-        eval =  Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
+        eval = Eval.unconstrained[NonEmptyList,Double](_.map(x => x * x).suml).eval
     )
 
 val particle = Position.createPosition(bounds).map(p => Entity(Mem(p, p.zeroed), p)).eval(rng)

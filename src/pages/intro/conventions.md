@@ -24,7 +24,7 @@ You will come across two different types of code blocks. The first being a stand
 val number = 21 // My number
 println(s"My favorite number is $number") // My message
 ```
-The second type of code block uses [tut][link-tut] to ensure it compiles. You can see the result of the compilation aas a comment. 
+The second type of code block uses [tut][link-tut] to ensure it compiles. You can see the result of the compilation as a comment. 
 
 ```tut:book
 "cilib".toUpperCase

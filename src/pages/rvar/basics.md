@@ -1,7 +1,7 @@
 ## The Basics of RVar
 
 Let’s get to know RVar by going over an example. 
-In general, we can say that there is three parts to using RVar:
+In general, we can say that there are three parts to using RVar:
 
 1. The number generator
 2. The random variable
@@ -26,7 +26,7 @@ RNG.fromTime //Generates a `RNG` with a seed value based on the current time.
 
 RNG.init(seed: Long) //We can supply the seed value to generate a `RNG`.
 
-RNG.initN(n: Int, seed: Long) //Given a seed value we can geberate a list of n `RNG`.
+RNG.initN(n: Int, seed: Long) //Given a seed value we can generate a list of n `RNG`.
 
 RNG.split((r: RNG) //Generates a tuple of two `RNGs` based on the original's, r's, seed value.
 ```
@@ -40,7 +40,7 @@ val rng = RNG.fromTime
 
 ### Our First RVar
 
-RVar offers a few methods but we wont get into all of the right now. We are going to be looking at 
+RVar offers a few methods but we won't get into all of the right now. We are going to be looking at the following methods 
 
 ```scala
 RVar.doubles(n: Int) //Generates a list of size n where each element is a *generator placeholders* of type `Double`.
@@ -56,20 +56,19 @@ val ints = RVar.ints(3)
 ### Random Numbers!
 
 Great! We have defined our `Rvars` as well as a `RNG`. 
-Its important to know that our `RVar` variables currently **do not** contain any values. 
-Only place holders. 
+It's important to know that our `RVar` variables currently **do not** contain any values, only place holders. 
 We need to pass our `RNG` to the `RVars` to generate our random values. 
 This happens at run time. We can achieve this by using
 
 ```tut:book
-val doubleResult = doubles.run(rng)
+val doublesResult = doubles.run(rng)
 val intsResult = ints.run(rng)
 
 intsResult._2 // Use ._2 to get the actual list of numbers
 ```
 As you can see we have generated random values. 
-Since we now understand how `RVar` works, we can now move on to using some of the other functions. 
+Since we now understand how `RVar` works, we can move on to using some of the other functions. 
 
 <div class="callout callout-info">
-The important point to note is that running the computation again, with the same PRNG, that is the original state of the PRNG will result in the same obtained results. 
+The important point to note is that running the computation again with the same PRNG will give us the exact same numbers. That is, the original state of the PRNG will result in the same obtained results no matter where or when we run it.
 </div>

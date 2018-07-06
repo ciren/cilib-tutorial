@@ -26,6 +26,6 @@ in short, a `Guide` is a selection followed by a comparison, wrapped up in a `St
 ### Pool
 
 The `Pool` represents a pool.
-This type is a non empty list of `PooItems`, which we will see shortly.
+This type is a non empty list of `PoolItems`, which we will see shortly.
 
 `type Pool[A] = NonEmptyList[PoolItem[A]]`

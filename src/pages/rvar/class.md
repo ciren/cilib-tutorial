@@ -1,12 +1,12 @@
 ## RVar Class
 
 Now that we have some introductory knowledge as to how `RVar` 
-works we should distinguish between the RVar class and it's companion object. 
-The easiest way to do this is look at the the methods that each offer. 
+works we should distinguish between the RVar class and its companion object. 
+The easiest way to do this is to look at the the methods that each offer. 
 
 In this section, as is the theme of this book, 
 I will cover each method to help you understand functionally the `RVar` class has to offer. 
-This wil also serve as documentation to the class. At a quick glance we will be covering 
+This will also serve as documentation to the class. At a quick glance we will be covering 
 
 ```scala
 run(initial: RNG): (RNG, A)
@@ -20,7 +20,7 @@ map[B](f: A => B): RVar[B]
 flatMap[B](f: A => RVar[B]): RVar[B]
 ```
 
-However, its important to note that we are only able to instate `RVars` through the companion object. 
+However, it's important to note that we are only able to instantiate `RVars` through the companion object. 
 Alright, let's get started. 
 
 
@@ -30,7 +30,7 @@ We have seen `run` before in our introductory example.
 It returns the a `tuple` containing the `RNG` used as well as the resulting random value/s of type A. 
 
 <div class="callout callout-info">
-It should be noted that when we call `run`, or any method that uses `run`, with on the same `RVar` with the same `RNG` it will produce the same result.
+It should be noted that when we call `run`, or any method that uses `run`, on the same `RVar` with the same `RNG` it will produce the same result.
 
 ```tut:book:invisible
 import cilib._
@@ -68,14 +68,14 @@ newRNG == rng
 ### map
 
 When we use `map`, we are simply changing the values in the context (RVar).
-An example of such use would be multiply each number by a factor.
+An example of such a use would be to multiply each number by a factor.
 
 ```tut:book
 doubles.eval(rng)
 doubles.map(x => x map(_ * 0.2)).eval(rng)
 ```
 
-In this case, `x` is our `List[Double]` and we are saying for every `Double` in the list we are multiplying it by 0.2.
+In this case, `x` is our `List[Double]` and we are saying for every `Double` in the list, multiply it by 0.2.
 
 ### flatMap
 

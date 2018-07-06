@@ -2,8 +2,8 @@
 
 So far we have seen a lot from the pso package.
 At this point it has mostly been centered around learning the basics of the package.
-From here on out we will be looking at all the related methods to build pso algorithms as well as the algorithms ourselves.
-However, these sections will feel more like documentation has they are methods based of existing pso knowledge and not anything specific to CILib.
+From here on out we will be looking at all the related methods to build pso algorithms as well as the algorithms themselves.
+However, these sections will feel more like documentation as they are methods based on existing pso knowledge and not anything specific to CILib.
 
 ### Types
 

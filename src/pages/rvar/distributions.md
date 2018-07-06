@@ -58,9 +58,8 @@ val rng = RNG.fromTime
 Dist.stdNormal.run(rng)
 ```
 
-Using the functions is pretty straight forward. 
-As are the methods, however, some methods make use of `Interval[A]` which you might be be unfamiliar with. 
-If that's the case, not to worry, here is how you would do it. 
+Using the functions is pretty straight forward, as are the methods, however, some methods make use of `Interval[A]` which you might be be unfamiliar with. 
+If that's the case, don't to worry, here is how you would do it. 
 
 ```tut:book:silent
 import spire.implicits._

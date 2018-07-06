@@ -35,7 +35,7 @@ poolitem.change(particle) // Change the item
 
 The `Pool` object is very easy to use.
 Nearly all of the methods take at least a `NonEmptyList[A]` which represent our items.
-In these examples, for simplicity purposes, we will be using `Double` as out type.
+In these examples, for simplicity purposes, we will be using `Double` as our type.
 Let's say we needed to create a pool where each item within the pool had the same score.
 To do this we would use `mkPool`.
 
@@ -82,7 +82,7 @@ updateUserBehaviours[A, B](oldP: Pool[B], newP: Pool[B])(xs: NonEmptyList[User[A
 ```
 
 As you can see, it makes use of a `User` type.
-`User` is simply somme user representation, such as `Particle` matched with a `PoolItem`.
+`User` is simply some user representation, such as `Particle` matched with a `PoolItem`.
 
 `User[A, B](user: A, item: PoolItem[B])`
 

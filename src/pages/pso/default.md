@@ -1,6 +1,6 @@
 ## Default Algorithms
 
-CILib has several predefined pso algorithms for us to usein the `Defaults`.
+CILib has several predefined pso algorithms for us to use in the `Defaults`.
 Keep in mind that all these algorithms will return the same type.
 
 `NonEmptyList[Particle[S,Double]] => Particle[S,Double] => Step[Double,Particle[S,Double]]`

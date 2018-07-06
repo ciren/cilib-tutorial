@@ -16,11 +16,11 @@ We may make muse of:
 - HasVelocity
 
 The following code is used to create an `Entity` which we will use to explore the class lenses.
-Take note of the evaluated `Entity` and it's contents.
+Take note of the evaluated `Entity` and its contents.
 
 ```tut:book:invisible
 import cilib._
-import spire.implicits.{eu =>  _, _}
+import spire.implicits.{eu => _, _}
 import spire.math._
 ```
 ```tut:book:silent

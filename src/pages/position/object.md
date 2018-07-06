@@ -33,7 +33,7 @@ For `eval` we will need to supply a `Position`, which we will create, as well as
 This method will an `RVar` of type `Solution` (another `Position`type).
 ```tut:book:invisible
 import cilib._
-import spire.implicits.{eu =>  _, _}
+import spire.implicits.{eu => _, _}
 import spire.math._
 import scalaz._
 import Scalaz._

@@ -29,7 +29,7 @@ Because of these two classes we are able to represent the above cases that Gary 
 - x is a list of point that make up the position in the search space.
 - b are the intervals that which the points lie in.
 
-While `Solution` contains these, as well an `Object` to represent it's fitness.
+While `Solution` contains these, as well an `Object` to represent its fitness.
 Thus has the following constructor `Solution(x: NonEmptyList[A], b: NonEmptyList[Interval[Double]], o: Objective[A])`.
 Any changes to a `Solution` will result in a `Point`.
 Remember that a `Solution` is `Point` with a fitness evaluation.
@@ -49,7 +49,7 @@ import Scalaz._
 
 import eu.timepit.refined.auto._
 
-import spire.implicits.{eu =>  _, _}
+import spire.implicits.{eu => _, _}
 import spire.math.Interval
 ```
 </div>

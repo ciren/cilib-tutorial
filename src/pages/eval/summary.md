@@ -10,7 +10,7 @@ given function, while optionally applying a given `List` of `Constraints`.
 
 To do this we use the `eval` method. We could either get a `Single` or `Multi Objective` as a result.
 Where `Single` could contain a `Feasible` or `Infeasible` solution with a `List` of `Constraints` violated 
-(this list will be empty if its a `Feasible` solution).
+(this list will be empty if it's a `Feasible` solution).
 `Multi` will contain a `List` of `Single Objectives`.
 
 Because of the types returned we are able to use pattern matching to account for every situation and control

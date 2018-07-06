@@ -1,6 +1,6 @@
 ## Comparison
 
-Like the most of CILib, its easy to deduce what a component does based on it's name.
+Like the most of CILib, it's easy to deduce what a component does based on its name.
 With `Comparison` we are going to be making... comparisons!
 This is going to be a great addition to our arsenal of collected CILib components thus far.
 Our `Comparison` object offers us several methods
