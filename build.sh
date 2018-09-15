@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker-compose run book bash -c "npm install; mkdir -p dist; sbt ';pdf ;html'"
+docker-compose run book bash -c "npm install; mkdir -p dist; sbt ';pdf ;html'; ls -l ./dist"
