@@ -1,3 +1,8 @@
+# Note:
+
+This project will be folded into the main project repository and will
+preferably be served online.
+
 # Community tutorial for CIlib
 
 [![Build Status](https://travis-ci.org/cirg-up/cilib-tutorial.svg?branch=master)](https://travis-ci.org/cirg-up/cilib-tutorial)
